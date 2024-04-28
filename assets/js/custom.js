@@ -274,48 +274,37 @@ if ($('.player').length > 0) {
 ///////////////////////////////////////////
 
 
-if ($('.b-isotope').length > 0) {
+  if ($('.b-isotope').length > 0) {
 
-  var $container = $('.b-isotope-grid');
+    var $container = $('.b-isotope-grid');
 
-  // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item, .grid-item-galeri',
-    percentPosition: true,
-    masonry: {
-      columnWidth: '.grid-sizer'
-    }
-  });
-
-  $grid.imagesLoaded().progress( function() {
-    $grid.isotope('layout');
-  });
-
-  var currentFilter = localStorage.getItem('currentFilter');
-  if (currentFilter) {
-    $container.isotope({
-      filter: currentFilter
+    // init Isotope
+    var $grid = $('.grid').isotope({
+      itemSelector: '.grid-item, .grid-item-galeri',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.grid-sizer'
+      }
     });
-    $('.b-isotope-filter').find('.current').removeClass('current');
-    $('.b-isotope-filter a[data-filter="' + currentFilter + '"]').parent().addClass('current');
+    // layout Isotope after each image loads
+    $grid.imagesLoaded().progress( function() {
+      $grid.isotope('layout');
+    });
+
+    // filter items when filter link is clicked
+    $('.b-isotope-filter a').on( 'click', function() {
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector
+        });
+        return false;
+    });
+
+    $('.b-isotope-filter a').on( 'click', function() {
+      $('.b-isotope-filter').find('.current').removeClass('current');
+      $( this ).parent().addClass('current');
+    });
   }
-
-  $('.b-isotope-filter a').on( 'click', function() {
-      var selector = $(this).attr('data-filter');
-      $container.isotope({
-          filter: selector
-      });
-
-      // localStorage.setItem('currentFilter', selector);
-      return false;
-  });
-
-  $('.b-isotope-filter a').on( 'click', function() {
-    $('.b-isotope-filter').find('.current').removeClass('current');
-    $( this ).parent().addClass('current');
-  });
-}
-
 
 
 
