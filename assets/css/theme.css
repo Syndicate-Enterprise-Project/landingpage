@@ -1385,7 +1385,6 @@ blockquote cite {
   margin-right: 40px;
   padding-right: 320px;
   padding-bottom: 40px;
-  background: url("../media/content/bg/bg-2.png") no-repeat 100% 55px;
 }
 
 .b-about .ui-title-block {
@@ -3303,9 +3302,20 @@ blockquote cite {
 /* ---- isotope ---- */
 .grid-item {
   float: left;
+  
+}
+
+.grid-item-galeri {
+  float: left;
+  
 }
 
 .grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-item-galeri img {
   width: 100%;
   height: auto;
 }
@@ -3328,11 +3338,21 @@ blockquote cite {
 }
 
 .grid-sizer, .grid-item {
-  width: 20%;
+  width: 50%;
+}
+
+.grid-sizer, .grid-item-galeri {
+  width: 25%;
 }
 
 .grid-item {
   height: auto;
+  margin-bottom: 10%;
+}
+
+.grid-item-galeri {
+  height: auto;
+  margin-bottom: 10%;
 }
 
 .grid-item_wx2 {
@@ -3343,9 +3363,6 @@ blockquote cite {
   width: 40%;
 }
 
-.grid-item_hx2 {
-  height: 358px;
-}
 
 .b-isotope-filter {
   margin-top: 37px;
@@ -5219,7 +5236,7 @@ blockquote cite {
 .footer {
   padding-top: 111px;
   color: #888;
-  background: url("../media/components/footer/bg.jpg");
+  background: url("../media/general/footer.png");
   background-size: cover;
 }
 
