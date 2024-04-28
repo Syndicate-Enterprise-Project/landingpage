@@ -72,18 +72,42 @@ function hitungKredit() {
 }
 
 
-function showImage() {
+function showImageOmoda() {
     var selectBox = document.getElementById("omoda-car");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
     var image = document.getElementById("car-image");
     
-    if (selectedValue === "omoda1") {
-        image.src = "./assets/media/general/map-marker.png";
+    if (selectedValue === "omoda5") {
+        image.src = "./assets/media/general/Varian/CHERY-OMODA-5/Omoda 5 (2).png";
         image.style.display = "block";
-    } else if (selectedValue === "omoda2") {
-        image.src = "./assets/media/general/logo.png";
+    }else if (selectedValue === "omodae5") {
+        image.src = "./assets/media/general/Varian/CHERY-OMODA-E5/1.png";
         image.style.display = "block";
 
+    }else if (selectedValue === "omoda5gt") {
+        image.src = "./assets/media/general/Varian/CHERY-OMODA-5-GT/Omoda 5 GT.png";
+        image.style.display = "block";
+    }
+    else {
+        image.style.display = "none";
+    }
+}
+
+function showImageTiggo() {
+    var selectBox = document.getElementById("tiggo-car");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    var image = document.getElementById("car-image");
+    
+    if (selectedValue === "tiggo5x") {
+        image.src = "./assets/media/general/Varian/CHERY-TIGGO-5X/Tiggo-5X.png";
+        image.style.display = "block";
+    }else if (selectedValue === "tiggo7pro") {
+        image.src = "./assets/media/general/Varian/CHERY-TIGGO-7-PRO/Tiggo 7 Pro.png";
+        image.style.display = "block";
+
+    }else if (selectedValue === "tiggo8pro") {
+        image.src = "./assets/media/general/Varian/CHERY-TIGGO-8-PRO/Tiggo-8Pro.png";
+        image.style.display = "block";
     }
     else {
         image.style.display = "none";
