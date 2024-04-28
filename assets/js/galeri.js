@@ -15,25 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Fungsi untuk menampilkan konten berdasarkan filter yang dipilih
-    function showContent(filter) {
-        if (filter === 'foto') {
-            fotoImage.style.display = 'block';
-            videoImage.style.display = 'none';
-        } else if (filter === 'video') {
-            fotoImage.style.display = 'none';
-            videoImage.style.display = 'block';
-        }
-    }
-
-    // Set filter aktif berdasarkan URL jika ada
-    var urlParams = new URLSearchParams(window.location.search);
-    var defaultFilter = urlParams.get('filter');
-    var activeFilter = defaultFilter && (defaultFilter === 'foto' || defaultFilter === 'video') ? defaultFilter : 'foto';
-    
-    // Menampilkan konten berdasarkan filter yang dipilih
+    // Set filter "foto" sebagai filter aktif dan tampilkan kontennya saat halaman dimuat
+    var activeFilter = 'foto';
     toggleFilterContainers(activeFilter);
-    showContent(activeFilter);
+
+    // Menampilkan atau menyembunyikan gambar sesuai dengan filter yang aktif
+    if (activeFilter === 'foto') {
+        fotoImage.style.display = 'block';
+        videoImage.style.display = 'none';
+    } else if (activeFilter === 'video') {
+        fotoImage.style.display = 'none';
+        videoImage.style.display = 'block';
+    }
 
     // Tambahkan event listener untuk setiap link filter
     filterLinks.forEach(function (link) {
@@ -41,25 +34,26 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             var clickedFilter = this.getAttribute('data-filter');
 
-            // Memeriksa apakah link yang diklik sudah memiliki kelas "current"
-            if (!this.parentElement.classList.contains('current')) {
-                // Menghapus kelas "current" dari semua link
-                filterLinks.forEach(function (link) {
-                    link.parentElement.classList.remove('current');
-                });
+            // Mengubah filter aktif
+            activeFilter = clickedFilter;
 
-                // Menambahkan kelas "current" pada link yang diklik
-                this.parentElement.classList.add('current');
+            // Memperbarui tampilan berdasarkan filter yang aktif
+            toggleFilterContainers(activeFilter);
 
-                // Mengubah filter aktif
-                activeFilter = clickedFilter;
-
-                // Memperbarui tampilan berdasarkan filter yang aktif
-                toggleFilterContainers(activeFilter);
-
-                // Memperbarui tampilan gambar atau video sesuai dengan filter yang aktif
-                showContent(activeFilter);
+            // Memperbarui tampilan gambar atau video sesuai dengan filter yang aktif
+            if (activeFilter === 'foto') {
+                fotoImage.style.display = 'block';
+                videoImage.style.display = 'none';
+            } else if (activeFilter === 'video') {
+                fotoImage.style.display = 'none';
+                videoImage.style.display = 'block';
             }
+
+            // Menghapus kelas "current" dari semua link dan menambahkan kelas "current" pada link yang diklik
+            filterLinks.forEach(function (link) {
+                link.parentElement.classList.remove('current');
+            });
+            this.parentElement.classList.add('current');
         });
     });
 });
