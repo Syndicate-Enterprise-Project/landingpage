@@ -75,7 +75,7 @@ function hitungKredit() {
 function showImageOmoda() {
     var selectBox = document.getElementById("omoda-car");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    var image = document.getElementById("car-image");
+    var image = document.getElementById("car-image-omoda");
     
     if (selectedValue === "omoda5") {
         image.src = "./assets/media/general/Varian/CHERY-OMODA-5/Omoda 5 (2).png";
@@ -96,7 +96,7 @@ function showImageOmoda() {
 function showImageTiggo() {
     var selectBox = document.getElementById("tiggo-car");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    var image = document.getElementById("car-image");
+    var image = document.getElementById("car-image-tiggo");
     
     if (selectedValue === "tiggo5x") {
         image.src = "./assets/media/general/Varian/CHERY-TIGGO-5X/Tiggo-5X.png";
