@@ -610,6 +610,25 @@
     width: 100%;
     float: none;
   }
+
+  .grid-sizer,
+  .grid-item-galeri {
+    width: 50%;
+  }
+
+  .grid-item {
+    height: auto;
+    margin-bottom: 0%;
+  }
+
+  .grid-item-galeri.video {
+    margin-left: 0%; 
+  }
+  
+  .grid-item-galeri.video iframe {
+    width: 200%; 
+  }
+
   .navbar-nav {
     margin: 0;
   }

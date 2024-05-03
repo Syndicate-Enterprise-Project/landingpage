@@ -3362,6 +3362,15 @@ blockquote cite {
   width: 40%;
 }
 
+.grid-item-galeri.video {
+  margin-left: 20%; 
+}
+
+.grid-item-galeri.video iframe {
+  width: 250%; 
+  height: 400px;
+}
+
 
 .b-isotope-filter {
   margin-top: 37px;
