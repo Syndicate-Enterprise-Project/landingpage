@@ -103,6 +103,7 @@
   .b-about-list {
     padding-top: 30px;
   }
+
   .block-table_lg {
     display: block;
   }
@@ -133,6 +134,11 @@
   [class^='col']:last-child .b-advantages-5 {
     margin-bottom: 0;
   }
+
+  .block-table {
+    display: block;
+  }
+  
   .section-type-2__img {
     margin-right: 0;
     margin-bottom: 30px;
@@ -182,7 +188,7 @@
     padding-top: 70px;
   }
   .section-form-contacts {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
   }
   .footer__main {
     padding-bottom: 40px;
