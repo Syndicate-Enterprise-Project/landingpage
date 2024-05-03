@@ -348,6 +348,14 @@ img.pull-left {
 }
 
 /* Forms */
+.form-control.dp {
+  max-width: 50%;
+  height: 48px;
+  margin-top: 1.75%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 select:focus {
   outline-style: none;
 }
@@ -3370,7 +3378,6 @@ blockquote cite {
   width: 250%; 
   height: 400px;
 }
-
 
 .b-isotope-filter {
   margin-top: 37px;

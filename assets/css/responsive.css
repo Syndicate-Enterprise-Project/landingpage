@@ -322,6 +322,15 @@
   .b-goods-1_mod-a .b-goods-1__name {
     width: auto;
   }
+
+  /* simulasi kredit */
+  .form-control.dp {
+    max-width: 50%;
+    height: 48px;
+    margin-top: 2.5%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
 }
 /* end 991px-768px */
 
@@ -658,6 +667,15 @@
   .pull-left_sm,
   .pull-right_sm {
     float: none;
+  }
+
+  /* simulasi kredit */
+  .form-control.dp {
+    max-width: 50%;
+    height: 48px;
+    margin-top: 5%;
+    margin-right: 10px;
+    vertical-align: middle;
   }
 }
 /* end 767px */
