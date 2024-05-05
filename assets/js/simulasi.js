@@ -65,11 +65,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function hitungKredit() {
-    // Logika perhitungan kredit
-
-    var resultDiv = document.getElementById("result");
-    resultDiv.style.display = "block"; // Menampilkan div hasil
+    // Ambil nilai DP minimal dari input
+    var dpMinimal = parseFloat(document.getElementById("dp").value);
+    
+    // Cek apakah DP minimal lebih dari atau sama dengan 30%
+    if (dpMinimal < 30) {
+        alert("DP minimal harus 30% atau lebih.");
+        return;
+    }
+    
+    // Harga barang yang akan dihitung kreditnya
+    var hargaBarang = 1000; // Misalnya harga barang adalah 1000
+    
+    // Hitung DP
+    var dp = (dpMinimal / 100) * hargaBarang;
+    
+    // Hitung sisa harga yang harus dicicil
+    var sisaHarga = hargaBarang - dp;
+    
+    // Ambil elemen tabel untuk mengisi hasil perhitungan
+    var tabel = document.getElementsByTagName('table')[0];
+    
+    // Hitung angsuran, admin fee, asuransi, dan total untuk setiap tenor
+    for (var i = 1; i <= 5; i++) {
+        var angsuran = sisaHarga / i;
+        var adminFee = 50 * i; // Misalnya admin fee adalah 50 per tenor
+        var asuransi = 100 * i; // Misalnya asuransi adalah 100 per tenor
+        var total = dp + (angsuran * i) + adminFee + asuransi;
+        
+        // Isi nilai ke dalam tabel
+        tabel.rows[1].cells[i].innerText = dp.toFixed(2);
+        tabel.rows[2].cells[i].innerText = angsuran.toFixed(2);
+        tabel.rows[3].cells[i].innerText = adminFee.toFixed(2);
+        tabel.rows[4].cells[i].innerText = asuransi.toFixed(2);
+        tabel.rows[5].cells[i].innerText = total.toFixed(2);
+    }
+    
+    // Tampilkan hasil perhitungan
+    document.getElementById("result").style.display = "block";
 }
+
 
 
 function showImageOmoda() {

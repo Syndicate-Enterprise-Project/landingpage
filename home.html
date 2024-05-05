@@ -350,7 +350,8 @@
                                 Jika ada pertanyaan atau permintaan informasi lebih lanjut, jangan ragu untuk menghubungi kami. 
                             </div>
                             <div id="success"></div>
-                            <form class="b-form-contacts ui-form" id="contactForm" action="#" method="post">
+                            <form class="b-form-contacts ui-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="731c0fce-fdc4-4a70-8089-034ea38d8097">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -448,6 +449,10 @@
             </footer>
             <!-- .footer-->
         </div>
+        
+        <!-- Form -->
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+        <!-- AOS -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
           AOS.init();
